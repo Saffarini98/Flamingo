@@ -18,6 +18,15 @@ console.log("Bot server started in the " + process.env.NODE_ENV + " mode");
 //   });
 // });
 
+bot.onText(/\/start/, (msg, match) => {
+  const chatId = msg.chat.id;
+  var photo = "images/press.jpg";
+  bot.sendPhoto(chatId, photo, {
+    caption: "Press here to get the <b>/keyboard</b>",
+    parse_mode: "HTML"
+  });
+});
+
 module.exports = bot;
 
 //Keyboard
